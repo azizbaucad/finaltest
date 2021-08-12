@@ -11,13 +11,9 @@ if(isset($_POST['rr'])){
 	 $result =Vente::GetAllPag($_POST['rr'],$page,$limit);
 	 $resultat =Vente::GetAll($_POST['rr']);
 	  $total=count($resultat);
-	
-	
-	
-	
-	
-	?>
-	<div class="table-responsive">
+?>
+
+ <div class="table-responsive">
 		<table class="table table-striped">
         
         <tr id="tt">

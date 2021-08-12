@@ -50,7 +50,6 @@ $(document).ready(function() {
 			  $("#pre").val('');
 			  $("#lg").val('');
 			  $("#pass").val('');
-        $("#ctre").val('');
 			
 		 
 		 });
@@ -78,11 +77,16 @@ $(document).ready(function() {
 
 
 
-
-
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration system PHP and MySQL</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
 <h3>L'Ajout de Compte</h3>
 
-<form align="center" class="form-horizontal" id="ff" action="../controller/g_compte.php" method="post">
+<form class="form-horizontal" id="ff" action="../controller/g_compte.php" method="post">
 <div id="reponse"></div>
   
   
@@ -115,20 +119,6 @@ $(document).ready(function() {
       <input type="text" class="form-control "  name="pass" id="pass" required="" placeholder="Password">
     </div>
   </div>
-
-  <div class="form-group">
-    <label for="inputPassword3" class="col-sm-2 control-label">Centre<em>*</em></label>
-    <div class="col-xs-4">
-    
-      <select name="ctre" id="ctre">
-        <option value="PA">PA</option>
-        <option value="GW">GW</option>
-        <option value="DK">DK</option>
-      </select>
-
-
-    </div>
-  </div>
   
   
   
@@ -136,10 +126,12 @@ $(document).ready(function() {
    
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <input align="center" type="submit" id="AjCpt" name="AjCpt"  class="btn btn-success" value="Ajouter"  />&ensp; <input type="reset"  class="btn btn-default" onClick="window.location.href='../view/index.php?page=compte'" value="Annuler" />
+      <input type="submit" id="AjCpt" name="AjCpt"  class="btn btn-success" value="Ajouter"  />&ensp; <input type="reset"  class="btn btn-default" onClick="window.location.href='../view/index.php?page=compte'" value="Annuler" />
     </div>
   </div>
 </form>
+</body>
+</html>
 
 
   

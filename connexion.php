@@ -7,7 +7,7 @@
 		
      
        try{
-	$db = new PDO ('mysql:host=localhost;dbname=pfe','root','');
+	$db = new PDO ("mysql:host='mysql-saisie.alwaysdata.net';dbname='saisie_pfe'",'saisie','Aziz_2019');
 	$db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 	$db->exec("SET CHARACTER SET utf8 ");
 	

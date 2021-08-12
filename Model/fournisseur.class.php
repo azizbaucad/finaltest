@@ -60,7 +60,7 @@ class Fournisseur{
 		
 		
 		
-		public static function afficherAll()
+		/*public static function afficherAll()
 		{
             global $db;
 		  $req =$db->prepare("SELECT * FROM `fournisseur`"); 
@@ -71,7 +71,7 @@ class Fournisseur{
 		  
 		   return $req->fetchAll(PDO::FETCH_OBJ);
 		
-		}
+		}*/
 	
 	
 	

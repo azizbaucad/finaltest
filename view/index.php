@@ -11,10 +11,10 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Gestion Pharmacie</title>
+    <title>DGID</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">    
-   <link rel="shortcut icon"  href="img/icon.png">
+   <link rel="shortcut icon"  href="img/view/logodgid.jpg">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     
     <link href="dist/css/ionicons.min.css" rel="stylesheet" type="text/css">    
@@ -49,7 +49,7 @@
 		
 		 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-     <script type="text/javascript" src="dist/js/calendar.js"></script>	
+     <!--script type="text/javascript" src="dist/js/calendar.js"></script-->	
     <script src="plugins/jQuery/jQuery-2.1.3.min.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>    
     <script src="plugins/datatables/jquery.dataTables.min.js"></script>
@@ -70,16 +70,16 @@
   <body class="sidebar-mini skin-green-light wysihtml5-supported" onload="viewdata()" >
     <div class="wrapper">
       
-      <header class="main-header">
+      <header class="main-header" style="height: auto; background-color:#DEB887;">
         <!-- Logo -->
-        <a href="index.php" class="logo">
+        <a href="index.php" class="logo" style="height: auto; background-color:#DEB887;">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>G</b>PH</span>
+          <span class="logo-mini"><b>DGID</b></span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>G-Pharma</b>cie</span>
+          <span class="logo-lg">DGID formulaires</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
-        <nav class="navbar navbar-static-top" role="navigation">
+        <nav class="navbar navbar-static-top" role="navigation" style="height: auto; background-color:#DEB887;">
           <!-- Sidebar toggle button-->
           <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
             <span class="sr-only">Toggle navigation</span>
@@ -130,19 +130,43 @@
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu" id="menu">
           <ul class="sidebar-menu" id="menu">
-            <li class="<?php if($_GET['page']=="tbord" or $_GET['page']=="" ){ echo 'active';} ?>"><a href="?page=tbord"><i class="fa fa-bar-chart-o"></i> <span><strong> Tableau de bord</strong></span></a></li>
-            <li class="<?php if($_GET['page']=="medicament"){ echo 'active';} ?>"><a href="?page=medicament"><i class=" fa fa-flask"></i> <span><strong>Médicament</strong></span></a></li>
-			<li class="<?php if($_GET['page']=="vente" ||$_GET['page']=="d_vente"){ echo 'active';} ?>"><a href="?page=vente"><i class="fa  fa-shopping-cart"></i> <span><strong>Vente</strong><span></a></li>
-			<li class="<?php if($_GET['page']=="achat" ||$_GET['page']=="d_achat"  ){ echo 'active';} ?>"><a href="?page=achat"><i class="glyphicon glyphicon-list-alt"></i> <span><strong>BL</strong></span></a></li>
-			<li class="<?php if($_GET['page']=="client"){ echo 'active';} ?>"><a href="?page=client"><i class="fa fa-group"></i> <span><strong>Clients</strong></span></a></li>
-			<?php if($_SESSION['login']== "Admin"){ ?>
-			<li class="<?php if($_GET['page']=="fournisseur"){ echo 'active';} ?>"><a href="?page=fournisseur"><i class="fa fa-truck"></i> <span><strong>Fournisseur </strong></span></a></li>
+            
+			
+			<li class="<?php if($_GET['page']=="achat" ||$_GET['page']=="d_achat"  ){ echo 'active';} ?>"><a href="?page=achat"><i class="glyphicon glyphicon-list-alt"></i> <span><strong>BR</strong></span></a></li>
+			
+			<?php if($_SESSION['login'] == "Admin"){ ?>
+			
 			<li class="<?php if($_GET['page']=="compte"){ echo 'active';} ?>"><a href="?page=compte"><i class="fa fa-users"></i> <span><strong>Compte</strong></span></a></li>
 			<?php
 			} ?>
+
+<style>
+  .sidebar{
+    background-color:white;
+  }
+  .main-sidebar{
+    background-color:white;
+  }
+  .navbar , section , header , aside{
+    background-color:white;
+  }
+  body{
+	  background-image:url('view/img/dgid.png');
+    background-color:white;
+	  
+	  background-repeat:no-repeat;
+	  
+	  background-attachment: fixed;
+	  height:80%;
+  }
+   #cont{
+    margin-top:150px;
+    
+}
+  </style>
            
           </ul>
-        </section>
+         </section>
         <!-- /.sidebar -->
       </aside>
 
@@ -195,9 +219,9 @@
       </div><!-- /.content-wrapper -->
       <footer class="main-footer">
         <div class="pull-right hidden-xs">
-          <b>Version</b> 2.0
+          <b>Version</b> 1.0
         </div>
-        <strong>Copyright &copy; 2015 </strong> This system has been programmed by programmers  Nabil Aboukarfa.
+        <strong>Copyright &copy; 2021 </strong> 
       </footer>
       
      

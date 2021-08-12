@@ -4,7 +4,7 @@
 session_start();
 if(isset($_GET['deco'])){
 	session_destroy();
-    header('location:index.php');
+    header('location:indexdag.php');
 }
 ?>
 <!DOCTYPE html>
@@ -64,22 +64,19 @@ require_once "Model/compte.class.php";
  if($nb>0){
  foreach(Compte::login($_POST['log'],$_POST['pass']) as $data){
  
-          $_SESSION['id_cpt']=$data->id_cpt;
+ 
           $_SESSION['login']=$data->login;
 					$_SESSION['password']=$data->password;
 					$_SESSION['nom_u']=$data->nom_u;
 					$_SESSION['prenom_u']=$data->prenom_u;
-					$_SESSION['centre']=$data->centre;
+					$_SESSION['image']=$data->image;
 					
 					//header("location:view/index.php");
 					
-				echo "<script>location.href='view/index.php?page=achat';</script>";
+				echo "<script>location.href='indexview.php';</script>";
  }
  
   }
-
-
-
 else{
 	
 	
@@ -88,7 +85,6 @@ else{
   <span class='sr-only'>Error:</span>login or password incorecte</div>";
 	
 	}
-  
   }
   
   ?>
@@ -106,11 +102,7 @@ else{
                                 
                                 <!-- Change this to a button or input when using this as a form -->
                                 <input type="submit" name="sub" id="sub" value="Login"  class="btn btn-lg btn-success btn-block">
-                                
-                                
-                                <a class="btn btn-lg btn-success btn-block" href="compte/formCpt.php">s'inscrire</a>
                             </fieldset>
-                            
                         </form>
                     </div>
                 </div>

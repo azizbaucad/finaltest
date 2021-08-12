@@ -158,12 +158,62 @@ function PosteAj(){
 function AjouDetBL(){
 	
 	var g=$("#getid").val();
-	var idd=$("#idm").val();
-	var des=$("#des").val();
-	var qte=$("#qte").val();
-	var px=$("#px").val();
+
+	var ctri=$("#ctri").val();
+	var agti=$("#agti").val();
+	var idagti=$("#idagti").val();
 	
-	$.post("../controller/g_de_achat.php",{gid:""+g+"",idm:""+idd+"",des:""+des+"",qte:""+qte+"",px:""+px+""},function(data){
+	var imi=$("#imi").val();
+	var dapi=$("#dapi").val();
+	var deni=$("#deni").val();
+	var moi=$("#moi").val();
+	var mmhti=$("#mmhti").val();
+	var mmttci=$("#mmttci").val();
+	var nini=$("#nini").val();
+	var dati=$("#dati").val();
+
+	var adri=$("#adri").val();
+	var cnii=$("#cnii").val();
+	var cniei=$("#cniei").val();
+	var ddcnii=$("#ddcnii").val();
+	var ppoi=$("#ppoi").val();
+	var ddppoi=$("#ddppoi").val();
+	var tel1i=$("#tel1i").val();
+	var tel2i=$("#tel2i").val();
+	var rib1i=$("#rib1i").val();
+
+	var rib2i=$("#rib2i").val();
+	var cmti=$("#cmti").val();
+	
+
+
+	
+	$.post("../controller/g_de_achat.php",{gid:""+g+"",
+	
+	ctri:""+ctri+"",
+	agti:""+agti+"",
+	idagti:""+idagti+"",
+	imi:""+imi+"",
+	dapi:""+dapi+"",
+	deni:""+deni+"",
+	moi:""+moi+"",
+	mmhti:""+mmhti+"",
+	mmttci:""+mmttci+"",
+	nini:""+nini+"",
+	dati:""+dati+"",
+	adri:""+adri+"",
+	cnii:""+cnii+"",
+	cniei:""+cniei+"",
+	ddcnii:""+ddcnii+"",
+	ppoi:""+ppoi+"",
+	ddppoi:""+ddppoi+"",
+	tel1i:""+tel1i+"",
+	tel2i:""+tel2i+"",
+	rib1i:""+rib1i+"",
+	rib2i:""+rib2i+"",
+	cmti:""+cmti+""
+
+},function(data){
 		
 		
 			

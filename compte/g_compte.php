@@ -29,7 +29,6 @@ include('../Model/compte.class.php');
           <th>Nom</th>
           <th>Prenom</th>
             <th>Password</th>
-			<th>Centre</th>
               
           <th colspan="2">Action</th>
         </tr>
@@ -46,7 +45,6 @@ include('../Model/compte.class.php');
         <td><?php echo $data->nom_u; ?></td>
         <td><?php echo $data->prenom_u; ?></td>
         <td><?php echo $data->password; ?></td>
-		<td><?php echo $data->centre; ?></td>
         
         <td>
         <ul  class="list-inline">
@@ -122,7 +120,7 @@ include('../Model/compte.class.php');
 		  if(isset($_POST['cpt'])){
 			  
 		
- include('../include/formCpt.php');
+ include('../compte.php');
 
 	}
 	
@@ -136,11 +134,11 @@ include('../Model/compte.class.php');
 	
 include('../Model/compte.class.php');
 	
-	$cpt = new Compte(0,$_POST['lg'],$_POST['nom'],$_POST['pre'],$_POST['pass'],$_POST['ctre']);
+	$cpt = new Compte(0,$_POST['lg'],$_POST['nom'],$_POST['pre'],$_POST['pass']);
 	
 	$ok=$cpt->Add();
 	
-    echo '<div id="al">Bien Ajouter</div>';
+     echo '<div id="al">Bien Ajouter</div>';
 	
 
 	}
@@ -169,7 +167,7 @@ include('../Model/compte.class.php');
 	
 	include_once '../Model/compte.class.php';
 	
-	$cpt = new compte($_POST['idd'],$_POST['lg'],$_POST['nom'],$_POST['pre'],$_POST['pass'],$_POST['ctre']);
+	$cpt = new compte($_POST['idd'],$_POST['lg'],$_POST['nom'],$_POST['pre'],$_POST['pass']);
 	
 	$ok=$cpt->Edit();
 

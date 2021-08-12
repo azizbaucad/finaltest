@@ -75,7 +75,19 @@ jQuery(function(){
     </div>
   </div>
   
-  
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Centre<em>*</em></label>
+    <div class="col-xs-4">
+    
+      <select name="ctre" id="ctre">
+        <option value="PA">PA</option>
+        <option value="GW">GW</option>
+        <option value="DK">DK</option>
+      </select>
+
+
+    </div>
+  </div>
   
   
    

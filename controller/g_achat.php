@@ -1,3 +1,11 @@
+            <!-- recupération de l'utilisateur logger-->
+<?php
+ session_start();
+ if(!isset($_SESSION['password'])){
+     header('location:../index.php');
+ }
+?>
+
 <?php 
 
 if(isset($_POST['rr'])){
@@ -10,7 +18,7 @@ if(isset($_POST['rr'])){
 	 if($pages == 0 || $pages==1){$page=0;}else{$page= ($pages*$limit)-$limit;}
 	 $result =Achat::GetAllPag($_POST['rr'],$page,$limit);
 	 $resultat =Achat::GetAll($_POST['rr']);
-	  $total=count($resultat);
+	 $total=count($resultat);
 	
 	
 	
@@ -21,34 +29,40 @@ if(isset($_POST['rr'])){
 		<table class="table table-striped">
         
         <tr id="tt">
-          <th>N°BL</th>
-          <th>Nom Fournisseur</th>
-          <th>Date BL</th>
+          <th>N°BR</th>
+          <th>Nom Agent</th>
+          <th>Date BR</th>
+          <th>NAgent</th>
+          <th>Centre</th>
           <th colspan="2">Action</th>
         </tr>
         <?php 
 		
 		
 		   $nb =count($result);
+
 		if($nb>0){
+            
 			
 			foreach($result as $data){
 			 ?>
         <tr>
-        <td><?php echo $data->id_a; ?></td>
-        <td><?php echo $data->nom_f; ?></td>
-        <td><?php echo $data->date_a; ?></td>
+        <td><?php echo $data->id_br; ?></td>
+        <td><?php echo $data->prenom_u ; ?></td>
+        <td><?php echo $data->date; ?></td>
+        <td><?php echo $data->login; ?></td>
+        <td><?php echo $data->centre; ?></td>
         
         
         <td>
         <ul class="list-inline">
-        <li><a href="index.php?page=d_achat&&id=<?php  echo $data->id_a; ?>" class="glyphicon glyphicon-folder-open " data-toggle="tooltip" data-placement="top" title="détail cette Achat" ></a></li>
-        <li><a href="javascript:deletA(<?php  echo $data->id_a; ?>)" class="glyphicon glyphicon-trash" data-toggle="tooltip" data-placement="top" title="Supprimer" ></a></li>
+        <li><a href="index.php?page=d_achat&&id=<?php  echo $data->id_br; ?>" class="glyphicon glyphicon-folder-open " data-toggle="tooltip" data-placement="top" title="détail ce BR" ></a></li>
+        <li><a href="javascript:deletA(<?php  echo $data->id_br; ?>)" class="glyphicon glyphicon-trash" data-toggle="tooltip" data-placement="top" title="Supprimer" ></a></li>
         
         </ul></td>
        </tr>    <?php }  }else{  ?>
 			<tr>
- <td colspan="5"><center><?php echo "Aucun Donnée"; ?></center></td>
+ <td colspan="5"><center><?php echo "Aucune Donnée"; ?></center></td>
 </tr> 
        <?php } ?>
        </table>
@@ -143,23 +157,23 @@ if(isset($_POST['rr'])){
      <!-**************************************************post form*************************************->
    
     
-    <?php if(isset($_POST['di'])){ include('../Model/fournisseur.class.php');
+    <?php if(isset($_POST['di'])){ include('../Model/compte.class.php');
 	  
 	
 	?>
     <div class="table-responsive">
      <table  width="682">
      <tr>
-  <td width="95" height="59"> Fournisseur :</td><td width="210"><select id="for" class="form-control">
+  <td width="95" height="59"> ID Agent :</td><td width="210"><select disabled="disabled" id="for" class="form-control">
  
-  <?php   foreach(Fournisseur::afficherAll() as $data){ ?>
+  <?php   foreach(Compte::afficherAll() as $data){ ?>
   
-  <option  value="<?php echo $data->id_f; ?>"><?php echo $data->nom_f; ?></option>
+  <option value="<?php echo $data->id_cpt; ?>"><?php echo $data->log; ?></option>
    
   <?php } ?>
 </select></td>
 <td width="9"> </td>
- <td width="100"> Date BL :</td><td width="147"><input type="text" id="dt" class="form-control" value="<?php echo date('Y-m-d'); ?>"></td><td width="9"></td>
+ <td width="100"> Date BR :</td><td width="147"><input type="text" id="dt" class="form-control" readonly value="<?php echo date('Y-m-d'); ?>"></td><td width="9"></td>
 <td width="80"> <button  class="btn btn-success" onclick="addA();">Valider</button></td>
 
 </tr>
@@ -181,13 +195,4 @@ if(isset($_POST['rr'])){
 	echo '<script>location.href="../view/index.php?page=d_achat&&id='.$pp.'";</script>';
 	
 	  }?>
-    
-    
-    
-    
-    
-    
-    
-    
-    
     

@@ -21,24 +21,6 @@ jQuery(function(){
 });
 
 
-
-
-		
-	
-	
-	
-		
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-
 </script>
 
 <?php 

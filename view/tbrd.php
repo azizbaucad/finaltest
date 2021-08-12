@@ -46,7 +46,7 @@ Médicament
 <div class="small-box bg-yellow">
 <div class="inner">
 <h3 id="nbr3"></h3>
-<p>Les BL</p>
+<p>Les BR</p>
 </div>
 <div class="icon">
 <i class="fa fa-file-text-o"></i>
@@ -90,7 +90,7 @@ Client
   <div class="col-xs-12 col-sm-6 col-md-8 "id="tt">
   <div class="box box-success">
   <div class="box-header with-border">
-    <h3 class="box-title">les médicaments a Commander </h3>
+    <h3 class="box-title">Bon de recouvrement marché</h3>
     <div class="box-tools pull-right">
       <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
     </div><!-- /.box-tools -->
@@ -102,22 +102,22 @@ Client
 </div>
 
   <div class="col-xs-6 col-md-4">
-  
-  
-	
-    <div class="jquery-calendar" id="cll"></div>
-	
-   
-    
 
- 
- 
-  
-  
-  
+
+
+    <div class="jquery-calendar" id="cll"></div>
+
+
+
+
+
+
+
+
+
   </div>
-  
-  
+
+
   
   
   

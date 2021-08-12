@@ -3,23 +3,35 @@
 		<table class="table table-striped " background-color="White">
      
         <tr id="tt">
-          <th>code barre</th>
-          <th>Designation</th>
-          <th>Form</th>
-            
-            <th>Famille</th>
-            <th>Prix Unitaire</th>
-            <th>Qte</th>
-              
+	      <th>intitule marché</th>
+	      <th>Date d'approbation</th>
+	      <th>Date d'enregistrement</th>
+	        
+	        <th>Maitre d'ouvrage</th>
+	        <th>Montant marche HT</th>
+	        <th>Montant marche TTC</th>
+
+	        <th>NINEA</th>
+	      <th>Designation attributaire</th>
+	      <th>Adresse</th>
+	        
+	        <th>CNI</th>
+	        <th>Date délivrance CNI</th>
+	        <th>Telephone 1</th>
+
+	        <th>Telephone 2</th>
+	      <th>RIB 1</th>
+	      <th>RIB 2</th>
+	        
+	        <th>Commentaires</th>
           
         </tr>
      
 	
 <?php 
- include('../Model/medicament.class.php');
-include('../Model/d_achat.class.php');
-
-include('../Model/d_vente.class.php');
+	 include('../Model/medicament.class.php');
+	 include('../Model/d_achat.class.php');
+	 include('../Model/d_vente.class.php');
 
  
 	  $resultat =Medicament::GetAl();

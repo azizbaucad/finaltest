@@ -1,6 +1,3 @@
-<?php
-      //  $username = $_SESSION['id_cpt'] ;
-?>
 <?php 
 require("connexion.php");
 
@@ -12,18 +9,15 @@ class Compte{
 	public $nom_u;
 	public $prenom_u;
 	public $password;
-	public $centre;
 	
 	
 	
-	
-	public function __construct($id,$log,$nom,$pre,$pass,$centrec){
+	public function __construct($id,$log,$nom,$pre,$pass){
 		$this->id_cpt=$id;
 		$this->login=$log;
 		$this->nom_u=$nom;
 		$this->prenom_u=$pre;
 		$this->password=$pass;
-		$this->centre=$centrec;
 		
 		
 	}
@@ -32,11 +26,8 @@ class Compte{
     
 	public static function afficherAll()
 	{
-		$user = $_SESSION['id_cpt'] ;
 		global $db;
-		$req = $db->prepare("SELECT compte.centre , compte.id_cpt, compte.nom_u , compte.prenom_u,  CONCAT(compte.centre,compte.id_cpt) as log
-		
-		FROM `compte`  where compte.id_cpt=$user ");
+		$req = $db->prepare("SELECT * FROM `compte`");
 
 		$req->execute();
 		return $req->fetchAll(PDO::FETCH_OBJ);
@@ -72,14 +63,13 @@ class Compte{
 	public  function Add()
 		{
             global $db;
-		  $req =$db->prepare("INSERT INTO `compte`(`login`, `nom_u`, `prenom_u`,`password`,`centre`) VALUES (:lg,:nom,:pre,:pass,:ctre)"); 
+		  $req =$db->prepare("INSERT INTO `compte`(`login`, `nom_u`, `prenom_u`, `password`) VALUES (:lg,:nom,:pre,:pass)"); 
 			 
 		    $ok=$req->execute(Array(
 			                      'lg'=>$this->login,
 								  'nom'=>$this->nom_u,
 								  'pre'=>$this->prenom_u,
-								  'pass'=>$this->password,
-								  'ctre'=>$this->centre
+								  'pass'=>$this->password
 			  ));
 			  
 			  
@@ -112,15 +102,14 @@ class Compte{
 		public  function Edit()
 		{
             global $db;
-		  $req =$db->prepare("UPDATE `compte` SET `login`=:lg, `nom_u`=:nom,`prenom_u`=:pre ,`password`=:pass ,`centre`=:ctre WHERE id_cpt=:idd "); 
+		  $req =$db->prepare("UPDATE `compte` SET `login`=:lg, `nom_u`=:nom,`prenom_u`=:pre,`password`=:pass WHERE id_cpt=:idd "); 
 			 
 		    $ok=$req->execute(Array(
 			                        'idd'=>$this->id_cpt,
 									'lg'=>$this->login,
 			                        'nom'=>$this->nom_u,
 								    'pre'=>$this->prenom_u,
-								    'pass'=>$this->password,
-									'ctre'=>$this->centre
+								    'pass'=>$this->password
 								 
 			  ));
 			  

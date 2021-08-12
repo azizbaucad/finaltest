@@ -1,7 +1,7 @@
 
 <div id="rest" class="box box-solid box-success">
     <div class="box-header with-border">
-         <h3 class="box-title glyphicon glyphicon-list-alt "> Gestion BL</h3>
+         <h3 class="box-title glyphicon glyphicon-list-alt "> Gestion BR</h3>
           <div class="box-tools pull-right">
       <div class="has-feedback">
         <input type="text" class="form-control input-sm" name="recherch" id="Re" placeholder="Recherche par Nom..."/>
